@@ -10,13 +10,15 @@ import { DetailsComponent } from './components/details/details.component';
 
 import { HeaderComponent } from './components/header/header.component';
 import { PokemonService } from './services/pokemon.service';
+import { InformationComponent } from './components/information/information.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DetailsComponent,
-    HeaderComponent
+    HeaderComponent,
+    InformationComponent
   ],
   imports: [
     BrowserModule,
