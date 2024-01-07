@@ -1,1 +1,77 @@
-<p>details works!</p>
+<div class="container">
+    <div class="row">
+        <div class="mx-auto mb-3 col-lg-6 col-md-10 col-sm-12">
+            
+            <div class="loading text-center pt-5" *ngIf="loading">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+            </div>
+
+
+          <!--init card-->
+          <div class="card mt-3 " >
+            <div class="row g-0" *ngIf="!error">
+              <div class="col-md-4">
+               
+                <div class="carrusel">
+                    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img [src]="pokemon.sprites.front_default" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img [src]="pokemon.sprites.back_default" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img [src]="pokemon.sprites.front_shiny" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img [src]="pokemon.sprites.back_shiny" class="d-block w-100" alt="...">
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                </div>
+            
+            </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                    <p class="card-text">Position : {{pokemon.id}}</p>
+                    <p class="card-text"><strong>{{pokemon.name}}</strong></p>
+                    <p class="card-text">Attack : {{pokemon.stats[1].base_stat}}</p>
+                    <p class="card-text">Defense{{pokemon.stats[2].base_stat}}</p>
+                    
+                    <p class="card-text">Hp :  {{pokemon.stats[0].base_stat}}</p>
+                    <p class="card-text">Special-attack : {{pokemon.stats[3].base_stat}}</p>
+                    <p class="card-text">special-defense : {{pokemon.stats[4].base_stat}}</p>
+                 
+                    
+                     
+                </div>
+              </div>
+            </div>
+         
+            <div class="options mx-auto ">
+              <img *ngIf="error" style="max-width: 100%;" src="https://i.pinimg.com/736x/e4/61/90/e46190ba01520dfdafefa9a582736624.jpg">
+             
+            </div>
+            <button type="button" routerLink="home" class="btn btn-success" >Go Back</button>
+                 
+          </div>
+     
+       <!--end of card-->
+
+      
+
+        </div>
+        
+    </div>
+</div>

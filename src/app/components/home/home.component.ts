@@ -1,4 +1,5 @@
 import { Component, OnInit ,HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Ipokemon } from 'src/app/models/ipokemon';
 import { PokemonService } from 'src/app/services/pokemon.service';
@@ -10,19 +11,24 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class HomeComponent implements OnInit {
 
-  
+  pokemonId='';
   pokemon$:Ipokemon[]|any[]=[];
   error=false;
   loading=true;
   errorMessage='';
   counter=1;
-  constructor(private service:PokemonService){
+  constructor(private service:PokemonService,
+              private route:Router){
 
   }
   ngOnInit(): void {
     this.getList();
   }
   
+  getValue(){
+    console.log('value : '+this.pokemonId);
+    this.route.navigateByUrl(`/details/${this.pokemonId}`);
+  }
 
     getList():void{
 
