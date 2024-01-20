@@ -25,10 +25,7 @@ export class HomeComponent implements OnInit {
     this.getList();
   }
   
-  getValue(){
-    console.log('value : '+this.pokemonId);
-    this.route.navigateByUrl(`/details/${this.pokemonId}`);
-  }
+  
 
     getList():void{
 

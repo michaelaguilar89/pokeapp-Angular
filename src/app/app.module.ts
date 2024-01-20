@@ -11,6 +11,8 @@ import { DetailsComponent } from './components/details/details.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PokemonService } from './services/pokemon.service';
 import { InformationComponent } from './components/information/information.component';
+import { SendEmailComponent } from './components/send-email/send-email.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { InformationComponent } from './components/information/information.compo
     HomeComponent,
     DetailsComponent,
     HeaderComponent,
-    InformationComponent
+    InformationComponent,
+    SendEmailComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
